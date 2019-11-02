@@ -266,6 +266,12 @@ export default function Top(props) {
             <form onSubmit={submit}>
                 {value && (value==='yes' ? <Student/> : <Civilian/>)}
             </form>
+            <Card style={{margin: '20vw 0 0'}}>
+                <CardContent>
+                    <a href="https://github.com/5ym/easy-order">source</a><br />
+                    <a href="https://twitter.com/5yuim">author</a>
+                </CardContent>
+            </Card>
         </React.Fragment>
     );
 }
