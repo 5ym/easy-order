@@ -6,11 +6,15 @@ services:
       - '8080:80'
     volumes:
       - ./html:/var/www/html
+    restart: always
 
   appdb:
     image: mariadb
     ports:
       - '3306:3306'
+    volumes:
+      - ./db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=app
       - MYSQL_DATABASE=app
+    restart: always
