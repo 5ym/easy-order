@@ -49,4 +49,12 @@ class OrderController extends Controller
             ]
         ];
     }
+
+    /**
+     * @param Request $request
+     * @return array
+     */
+    public function payd(Request $request) {
+        return ['status' => 'complete'];
+    }
 }

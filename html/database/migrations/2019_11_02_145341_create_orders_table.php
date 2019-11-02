@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->json('data');
             $table->string('confirm');
-            $table->boolean('payd');
+            $table->string('payd');
             $table->timestamps();
         });
     }
