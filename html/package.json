@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "@material-ui/core": "^4.5.2",
+        "react-stripe-elements": "^5.1.0",
         "typeface-roboto": "0.0.75"
     }
 }
