@@ -115,6 +115,7 @@ export default function Top(props) {
                         </FormControl>
                     </CardContent>
                 </Card>
+                <Pay/>
                 <Card style={{margin: '2vw'}}>
                     <Button variant="contained" color="primary" type="submit" endIcon={<Icon>send</Icon>}>確定</Button>
                 </Card>
@@ -127,7 +128,7 @@ export default function Top(props) {
                 <CardContent>
                     <FormControl component="fieldset">
                         <FormLabel component="legend">支払い方法を選択してください。。</FormLabel>
-                        <RadioGroup aria-label="sub" name="sub">
+                        <RadioGroup aria-label="pay" name="pay">
                             <FormControlLabel value="cash" control={<Radio required={true} />} label="当日現金払い" />
                         </RadioGroup>
                     </FormControl>

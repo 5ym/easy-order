@@ -3,7 +3,8 @@ services:
   app:
     build: .
     ports:
-      - '8080:80'
+      - '880:80'
+      - '443:443'
     volumes:
       - ./html:/var/www/html
     restart: always

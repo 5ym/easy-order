@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {Card, CardContent, Typography} from "@material-ui/core";
 
-export default function Example(props) {
+export default function Pay(props) {
     const [data, setData] = useState(null);
     useEffect(() => {
         window.axios.get('/api/order/get/'+props.match.params.id).then((res)=>{
-            setData(res.data);
+            setData(res.data.confirm);
         }).catch((err)=>{
             if(err.code === 'ECONNABORTED') {
                 alert('時間切れです。再度処理を実行してください。');
