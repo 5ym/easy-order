@@ -22,11 +22,19 @@ class OrderController extends Controller
                 break;
         }
         $order = new Order();
-        $order->data = json_encode($request->input());
+        $order->data = json_encode($request->input(), JSON_UNESCAPED_UNICODE);
         $order->payd = false;
         $order->confirm = $code;
         $order->save();
 
         return $order->id;
+    }
+
+    /**
+     * @param Order $order
+     * @return mixed
+     */
+    public function get(Order $order) {
+        return $order->confirm;
     }
 }

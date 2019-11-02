@@ -27,7 +27,6 @@ export default function Top(props) {
     const submit = event => {
         event.preventDefault();
         window.axios.post('/api/order/create/', serialize(event.target)).then((res)=>{
-            console.log(res.data);
             props.history.push('/pay/'+res.data);
         }).catch((err)=>{
             if(err.code === 'ECONNABORTED') {
