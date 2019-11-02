@@ -187,9 +187,13 @@ export default function Top(props) {
     function Civilian() {
         return (
             <React.Fragment>
-                <Typography variant="subtitle2" component="p">
-                    電話番号は配送又はご連絡の際、メールアドレスはご連絡の用途に使用します。なるべくご記入ください
-                </Typography>
+                <Card style={{margin: '2vw'}}>
+                    <CardContent>
+                        <Typography variant="subtitle2" component="p">
+                            電話番号は配送又はご連絡の際、メールアドレスはご連絡の用途に使用します。なるべくご記入ください
+                        </Typography>
+                    </CardContent>
+                </Card>
                 <Card style={{margin: '2vw'}}>
                     <CardContent>
                         <FormControl component="fieldset" fullWidth={true}>
@@ -202,7 +206,7 @@ export default function Top(props) {
                     <CardContent>
                         <FormControl component="fieldset" fullWidth={true}>
                             <FormLabel component="legend">ご連絡先のメールアドレスをご記入ください。</FormLabel>
-                            <TextField name="name" />
+                            <TextField name="email" />
                         </FormControl>
                     </CardContent>
                 </Card>
@@ -210,7 +214,7 @@ export default function Top(props) {
                     <CardContent>
                         <FormControl component="fieldset" fullWidth={true}>
                             <FormLabel component="legend">配送先ご住所をご記入ください。</FormLabel>
-                            <TextField required={true} name="name" />
+                            <TextField required={true} name="address" />
                         </FormControl>
                     </CardContent>
                 </Card>

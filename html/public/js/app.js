@@ -99028,10 +99028,14 @@ function Top(props) {
   }
 
   function Civilian() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+      style: {
+        margin: '2vw'
+      }
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["CardContent"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
       variant: "subtitle2",
       component: "p"
-    }, "\u96FB\u8A71\u756A\u53F7\u306F\u914D\u9001\u53C8\u306F\u3054\u9023\u7D61\u306E\u969B\u3001\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9\u306F\u3054\u9023\u7D61\u306E\u7528\u9014\u306B\u4F7F\u7528\u3057\u307E\u3059\u3002\u306A\u308B\u3079\u304F\u3054\u8A18\u5165\u304F\u3060\u3055\u3044"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+    }, "\u96FB\u8A71\u756A\u53F7\u306F\u914D\u9001\u53C8\u306F\u3054\u9023\u7D61\u306E\u969B\u3001\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9\u306F\u3054\u9023\u7D61\u306E\u7528\u9014\u306B\u4F7F\u7528\u3057\u307E\u3059\u3002\u306A\u308B\u3079\u304F\u3054\u8A18\u5165\u304F\u3060\u3055\u3044"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
       style: {
         margin: '2vw'
       }
@@ -99053,7 +99057,7 @@ function Top(props) {
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["FormLabel"], {
       component: "legend"
     }, "\u3054\u9023\u7D61\u5148\u306E\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9\u3092\u3054\u8A18\u5165\u304F\u3060\u3055\u3044\u3002"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TextField"], {
-      name: "name"
+      name: "email"
     })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
       style: {
         margin: '2vw'
@@ -99065,7 +99069,7 @@ function Top(props) {
       component: "legend"
     }, "\u914D\u9001\u5148\u3054\u4F4F\u6240\u3092\u3054\u8A18\u5165\u304F\u3060\u3055\u3044\u3002"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TextField"], {
       required: true,
-      name: "name"
+      name: "address"
     })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
       style: {
         margin: '2vw'
