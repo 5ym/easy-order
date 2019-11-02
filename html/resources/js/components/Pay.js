@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Card, CardContent, Typography} from "@material-ui/core";
+import {Card, CardContent, MenuItem, Typography} from "@material-ui/core";
 import { StripeProvider } from 'react-stripe-elements';
 import MyCheckout from './MyCheckout';
 
@@ -38,12 +38,17 @@ export default function Pay(props) {
                 </Card>
             );
         } else {
+            var list = [];
+            for(var i in data.total){
+                list.push(<Typography variant="h5" component="h3">{i}：{data.total[i]}</Typography>);
+            }
             return (
                 <Card style={{margin: '2vw'}}>
                     <CardContent>
                         <Typography variant="h4" component="h1">支払い確認画面</Typography>
                         <Typography variant="subtitle2" component="p">料金をお支払の上この画面を学生にお見せください。(ご提示いただけなかった場合発送できません)</Typography>
-                        <Typography variant="h3" component="h1">{data.confirm}</Typography>
+                        <Typography variant="h3" component="h2">{data.confirm}</Typography>
+                        {list}
                     </CardContent>
                 </Card>
             );

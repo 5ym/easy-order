@@ -38,7 +38,15 @@ class OrderController extends Controller
         $data = json_decode($order->data);
         return [
             'confirm' => $order->confirm,
-            'pay' => $data->pay
+            'pay' => $data->pay,
+            'total' => [
+                'SSサイズ' => isset($data->{'ss-size'}) ? $data->{'ss-size'} : 0,
+                'Sサイズ' => isset($data->{'s-size'}) ? $data->{'s-size'} : 0,
+                'Mサイズ' => isset($data->{'m-size'}) ? $data->{'m-size'} : 0,
+                'Lサイズ' => isset($data->{'l-size'}) ? $data->{'l-size'} : 0,
+                'LLサイズ' => isset($data->{'ll-size'}) ? $data->{'ll-size'} : 0,
+                '3Lサイズ' => isset($data->{'3l-size'}) ? $data->{'3l-size'} : 0
+            ]
         ];
     }
 }

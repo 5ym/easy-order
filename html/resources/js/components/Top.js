@@ -130,6 +130,7 @@ export default function Top(props) {
                         <FormLabel component="legend">支払い方法を選択してください。。</FormLabel>
                         <RadioGroup aria-label="pay" name="pay">
                             <FormControlLabel value="cash" control={<Radio required={true} />} label="当日現金払い" />
+                            <FormControlLabel value="card" control={<Radio />} label="kクレジットカード払い" />
                         </RadioGroup>
                     </FormControl>
                 </CardContent>
