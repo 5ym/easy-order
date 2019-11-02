@@ -9,6 +9,8 @@ services:
 
   appdb:
     image: mariadb
+    ports:
+      - '3306:3306'
     environment:
       - MYSQL_ROOT_PASSWORD=app
       - MYSQL_DATABASE=app

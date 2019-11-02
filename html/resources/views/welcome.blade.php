@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{mix('/css/app.css')}}">
     <link rel="manifest" href="{{ asset('manifest.json') }}">
     <script>if ('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/service-worker.js')})}</script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 </head>
     <body>
         <div id="root"></div>

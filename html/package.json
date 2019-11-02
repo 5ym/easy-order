@@ -13,6 +13,7 @@
         "@babel/preset-react": "^7.0.0",
         "axios": "^0.19",
         "cross-env": "^5.1",
+        "form-serialize": "^0.7.2",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.13",
         "react": "^16.2.0",
@@ -24,6 +25,7 @@
         "workbox-webpack-plugin": "^4.3.1"
     },
     "dependencies": {
-        "@material-ui/core": "^4.5.2"
+        "@material-ui/core": "^4.5.2",
+        "typeface-roboto": "0.0.75"
     }
 }

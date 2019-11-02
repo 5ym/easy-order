@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Example from "./components/Example";
+import Top from "./components/Top";
 import Notfound from "./components/Notfound";
+import Pay from "./components/pay";
 
 const App = () => {
     return (
         <Router>
             <Switch>
-                <Route path="/" exact component={Example} />
+                <Route path="/" exact component={Top} />
+                <Route path="/pay/:id" component={Pay} />
                 <Route component={Notfound} />
             </Switch>
         </Router>
