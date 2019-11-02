@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Top from "./components/Top";
 import Notfound from "./components/Notfound";
-import Pay from "./components/pay";
+import Pay from "./components/Pay";
 
 const App = () => {
     return (

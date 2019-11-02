@@ -35,6 +35,10 @@ class OrderController extends Controller
      * @return mixed
      */
     public function get(Order $order) {
-        return $order->confirm;
+        $data = json_decode($order->data);
+        return [
+            'confirm' => $order->confirm,
+            'pay' => $data->pay
+        ];
     }
 }
