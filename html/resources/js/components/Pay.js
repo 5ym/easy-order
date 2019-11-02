@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Card, CardContent, Typography} from "@material-ui/core";
 import { StripeProvider } from 'react-stripe-elements';
+import MyCheckout from './MyCheckout';
 
 export default function Pay(props) {
     const [data, setData] = useState(false);
@@ -11,6 +12,9 @@ export default function Pay(props) {
             if(err.code === 'ECONNABORTED') {
                 alert('時間切れです。再度処理を実行してください。');
             } else {
+                if(err.response.status===404) {
+                    props.history.push('/404');
+                }
                 if(err.response.status===400) {
                     alert(err.response.data.error);
                 }
@@ -27,6 +31,9 @@ export default function Pay(props) {
                 <Card style={{margin: '2vw'}}>
                     <CardContent>
                         <Typography variant="h4" component="h1">お支払画面</Typography>
+                        <StripeProvider apiKey="pk_live_WaGD0yYFZA7sLCc0sKY5MLwK">
+                            <MyCheckout />
+                        </StripeProvider>
                     </CardContent>
                 </Card>
             );
