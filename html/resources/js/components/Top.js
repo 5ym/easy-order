@@ -56,31 +56,31 @@ export default function Top(props) {
                             </Select>
                         </FormControl>
                         <FormControl component="fieldset">
-                            <InputLabel id="s-size">Sサイズ</InputLabel>
+                            <InputLabel id="s-size">Sサイズ(155cm-165cm)</InputLabel>
                             <Select labelId="s-size" name="s-size">
                                 { [0,1,2,3,4,5,6,7,8,9,10].map((i) => <MenuItem value={i} key={i}>{i}</MenuItem>) }
                             </Select>
                         </FormControl>
                         <FormControl component="fieldset">
-                            <InputLabel id="m-size">Mサイズ</InputLabel>
+                            <InputLabel id="m-size">Mサイズ(165cm-175cm)</InputLabel>
                             <Select labelId="m-size" name="m-size">
                                 { [0,1,2,3,4,5,6,7,8,9,10].map((i) => <MenuItem value={i} key={i}>{i}</MenuItem>) }
                             </Select>
                         </FormControl>
                         <FormControl component="fieldset">
-                            <InputLabel id="l-size">Lサイズ</InputLabel>
+                            <InputLabel id="l-size">Lサイズ(170cm-180cm)</InputLabel>
                             <Select labelId="l-size" name="l-size">
                                 { [0,1,2,3,4,5,6,7,8,9,10].map((i) => <MenuItem value={i} key={i}>{i}</MenuItem>) }
                             </Select>
                         </FormControl>
                         <FormControl component="fieldset">
-                            <InputLabel id="ll-size">LLサイズ</InputLabel>
+                            <InputLabel id="ll-size">LLサイズ(175cm-185cm)</InputLabel>
                             <Select labelId="ll-size" name="ll-size">
                                 { [0,1,2,3,4,5,6,7,8,9,10].map((i) => <MenuItem value={i} key={i}>{i}</MenuItem>) }
                             </Select>
                         </FormControl>
                         <FormControl component="fieldset">
-                            <InputLabel id="3l-size">3Lサイズ</InputLabel>
+                            <InputLabel id="3l-size">3Lサイズ(180cm-190cm)</InputLabel>
                             <Select labelId="3l-size" name="3l-size">
                                 { [0,1,2,3,4,5,6,7,8,9,10].map((i) => <MenuItem value={i} key={i}>{i}</MenuItem>) }
                             </Select>
@@ -130,7 +130,7 @@ export default function Top(props) {
                         <FormLabel component="legend">支払い方法を選択してください。。</FormLabel>
                         <RadioGroup aria-label="pay" name="pay">
                             <FormControlLabel value="cash" control={<Radio required={true} />} label="当日現金払い" />
-                            <FormControlLabel value="card" control={<Radio />} label="kクレジットカード払い" />
+                            <FormControlLabel value="card" control={<Radio />} label="クレジットカード払い" />
                         </RadioGroup>
                     </FormControl>
                 </CardContent>

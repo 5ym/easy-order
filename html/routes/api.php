@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('api')->post('/order/create', 'Api\OrderController@create');
 Route::middleware('api')->get('/order/get/{order}', 'Api\OrderController@get');
+Route::middleware('api')->post('/order/payd', 'Api\OrderController@payd');
