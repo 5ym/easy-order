@@ -1,13 +1,11 @@
-version: '3'
 services:
-  app:
+  easyo:
     build: .
     ports:
       - '880:80'
       - '443:443'
     volumes:
       - ./html:/var/www/html
-    restart: always
 
   appdb:
     image: mariadb
@@ -18,4 +16,3 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=app
       - MYSQL_DATABASE=app
-    restart: always
