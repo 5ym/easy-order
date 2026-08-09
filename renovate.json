@@ -2,5 +2,14 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>5ym/renovate-config"
+  ],
+  "packageRules": [
+    {
+      "description": "svelte-check runs its language service on TypeScript 6 and refuses to start on 7. TypeScript 7 is installed alongside it as the @typescript/native alias and selected with --tsgo, so this entry must stay below 7 until svelte-check widens its peer range.",
+      "matchDepNames": [
+        "typescript"
+      ],
+      "allowedVersions": "<7"
+    }
   ]
 }

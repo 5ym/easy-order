@@ -14,6 +14,7 @@
 | UI | [Tailwind CSS](https://tailwindcss.com) 4 + [daisyUI](https://daisyui.com) 5 |
 | DB | SQLite (`bun:sqlite`, WAL) |
 | ビルド | Vite 8 + `@sveltejs/adapter-node` |
+| 型チェック | TypeScript 7 (`svelte-check --tsgo`) |
 
 **ランタイム依存パッケージはありません。** SQLite は Bun 組み込み、バリデーションは
 [`src/lib/order.ts`](src/lib/order.ts) の手書き、サーバーは adapter-node が単一バンドルに
@@ -34,10 +35,23 @@ DB ファイルは初回アクセス時に `./data/easy-order.sqlite` へ自動�
 | `bun run dev` | 開発サーバー |
 | `bun run build` | 本番ビルド (`./build`) |
 | `bun run start` | ビルド済みサーバーを起動 |
-| `bun run check` | `svelte-check` による型チェック |
+| `bun run check` | `svelte-check --tsgo` による型チェック |
 | `bun test` | ユニットテスト（バリデーション / DB) |
 | `bun run test:e2e` | ビルドして HTTP 経由の疎通テスト |
 | `bun run db:migrate` | マイグレーションを手動適用 |
+
+## TypeScript 7 (tsgo)
+
+型チェックは TypeScript 7 のネイティブ実装 (tsgo) で行います。`svelte-check` 自身の
+言語サービスはまだ TypeScript 6 を要求し、7 が入っていると起動を拒否するため、
+2 バージョンを併存させています。
+
+- `typescript` … 6 系。`svelte-check` の言語サービス用
+- `@typescript/native` … `npm:typescript@7` のエイリアス。`--tsgo` が診断に使う
+
+そのため **`typescript` を 7 に上げないでください。** `bun run check` が起動しなくなります。
+`renovate.json` で `typescript` を `<7` に固定してあります。
+`svelte-check` の peer 範囲が 7 に広がったら、この 2 本立てとピン留めは解消できます。
 
 ## 環境変数
 
