@@ -1,0 +1,16 @@
+{
+	"name": "Easy order",
+	"short_name": "Easy order",
+	"display": "standalone",
+	"orientation": "portrait",
+	"start_url": "/",
+	"background_color": "#ffffff",
+	"theme_color": "#009485",
+	"icons": [
+		{
+			"src": "/img/icon.png",
+			"sizes": "144x144",
+			"type": "image/png"
+		}
+	]
+}

@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+@plugin "daisyui" {
+	themes:
+		emerald --default,
+		dim --prefersdark;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+}

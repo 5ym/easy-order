@@ -1,17 +1,26 @@
-FROM alpine
+FROM oven/bun:1.3.14-alpine AS build
+WORKDIR /app
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
+COPY . .
+RUN bun run build
 
-RUN apk --no-cache add nginx php-fpm composer php-zip php-tokenizer php-fileinfo php-dom php-xmlwriter php-xml php-session php-pdo_mysql php-zlib php-curl npm
-RUN mkdir /run/nginx
-RUN apk add certbot && pip3 install certbot-dns-cloudflare
-RUN echo "dns_cloudflare_email = 16yuim@gmail.com" > cred.ini
-RUN echo "dns_cloudflare_api_key = ***REMOVED***" >> cred.ini
-RUN chmod 600 cred.ini
-RUN certbot certonly --dns-cloudflare --dns-cloudflare-credentials cred.ini --email 16yuim@gmail.com --agree-tos -n -d siteyui.site -d *.siteyui.site -d daco.dev -d *.daco.dev
-ADD default.conf /etc/nginx/conf.d/default.conf
-ADD html /var/www/html
-WORKDIR /var/www/html
+FROM oven/bun:1.3.14-alpine AS runtime
+WORKDIR /app
+ENV NODE_ENV=production \
+    DATABASE_PATH=/data/easy-order.sqlite \
+    HOST=0.0.0.0 \
+    PORT=3000
 
-EXPOSE 80
-EXPOSE 443
+# The app has no runtime dependencies — adapter-node bundles everything,
+# and SQLite comes from Bun itself. Only the build output is needed.
+COPY --from=build /app/build ./build
 
-CMD php-fpm7 && nginx -g "daemon off;"
+RUN mkdir -p /data && chown -R bun:bun /data /app
+USER bun
+
+VOLUME ["/data"]
+EXPOSE 3000
+
+# Schema migrations run on server start (see src/hooks.server.ts).
+CMD ["bun", "./build/index.js"]

@@ -1,18 +1,16 @@
 services:
   easyo:
     build: .
+    restart: unless-stopped
     ports:
-      - '880:80'
-      - '443:443'
-    volumes:
-      - ./html:/var/www/html
-
-  appdb:
-    image: mariadb
-    ports:
-      - '3306:3306'
-    volumes:
-      - ./db:/var/lib/mysql
+      - '3000:3000'
     environment:
-      - MYSQL_ROOT_PASSWORD=app
-      - MYSQL_DATABASE=app
+      DATABASE_PATH: /data/easy-order.sqlite
+      # Required for SvelteKit's CSRF origin check when behind a proxy.
+      ORIGIN: ${ORIGIN:-http://localhost:3000}
+    volumes:
+      # SQLite lives on a named volume — no separate database service.
+      - easyo-data:/data
+
+volumes:
+  easyo-data:
