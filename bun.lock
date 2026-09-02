@@ -11,7 +11,7 @@
         "@tailwindcss/vite": "4.3.3",
         "@types/bun": "1.4.0",
         "@typescript/native": "npm:typescript@7.0.2",
-        "daisyui": "5.7.25",
+        "daisyui": "5.7.27",
         "svelte": "5.57.0",
         "svelte-check": "4.7.6",
         "tailwindcss": "4.3.3",
@@ -239,7 +239,7 @@
 
     "cookie": ["cookie@0.6.0", "", {}, "sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw=="],
 
-    "daisyui": ["daisyui@5.7.25", "", {}, "sha512-lE5kR8FjHxUHiCb3/PAPuaNkv0MSm6B8GWd5x/l7SLDsH58IxYCiPG8wrcRgdZCI5q8jxpeA2Utx6O6X/kpLnw=="],
+    "daisyui": ["daisyui@5.7.27", "", {}, "sha512-Je10yYK7UFJYyLSQrIxhFmpwX+86gXdNTnfNkA1jlev7j9oz3QrqioEQ6/0JYOvYPs5NYH4aaJ+X35/N80G/xg=="],
 
     "deepmerge": ["deepmerge@4.3.1", "", {}, "sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A=="],
 
