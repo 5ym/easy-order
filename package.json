@@ -6,7 +6,7 @@
     "@sveltejs/kit": "2.70.3",
     "@sveltejs/vite-plugin-svelte": "7.3.0",
     "@tailwindcss/vite": "4.3.3",
-    "@types/bun": "1.4.0",
+    "@types/bun": "1.4.1",
     "@typescript/native": "npm:typescript@7.0.2",
     "daisyui": "5.7.28",
     "svelte": "5.57.0",
