@@ -8,7 +8,7 @@
     "@tailwindcss/vite": "4.3.3",
     "@types/bun": "1.4.0",
     "@typescript/native": "npm:typescript@7.0.2",
-    "daisyui": "5.7.27",
+    "daisyui": "5.7.28",
     "svelte": "5.57.0",
     "svelte-check": "4.7.6",
     "tailwindcss": "4.3.3",
