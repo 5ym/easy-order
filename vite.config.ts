@@ -1,9 +1,9 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	plugins: [tailwindcss(), sveltekit()],
+	plugins: [sveltekit()],
+	css: { preprocessorOptions: { scss: { silenceDeprecations: ['if-function'] } } },
 	build: {
 		rollupOptions: {
 			// `bun:sqlite` is a runtime builtin — never try to bundle or resolve it.

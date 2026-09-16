@@ -11,7 +11,7 @@
 | --- | --- |
 | ランタイム | [Bun](https://bun.sh) 1.3 |
 | フレームワーク | [SvelteKit](https://svelte.dev/docs/kit) 2 / [Svelte](https://svelte.dev) 5 (runes) |
-| UI | [Tailwind CSS](https://tailwindcss.com) 4 + [daisyUI](https://daisyui.com) 5 |
+| UI | [Pico CSS](https://picocss.com) 2 + 自前の SCSS ([`src/app.scss`](src/app.scss)) |
 | DB | SQLite (`bun:sqlite`, WAL) |
 | ビルド | Vite 8 + `@sveltejs/adapter-node` |
 | 型チェック | TypeScript 7 (`svelte-check --tsgo`) |
