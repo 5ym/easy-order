@@ -42,7 +42,7 @@ home=$(curl -s "$ORIGIN/")
 check "status" "200" "$(curl -s -o /dev/null -w '%{http_code}' "$ORIGIN/")"
 contains "renders the heading" "文化祭 退学願 Tシャツ販売フォーム" "$home"
 contains "renders the branch question" "木更津高専生ですか？" "$home"
-contains "daisyUI styles are applied" "card bg-base-100" "$home"
+contains "stylesheet classes are applied" 'class="panel body"' "$home"
 
 # A browser form POST sends `Accept: text/html`; without it SvelteKit replies
 # with the JSON action result it uses for `use:enhance` fetches.
@@ -66,7 +66,7 @@ echo "== GET $location =="
 pay=$(curl -s "$ORIGIN$location")
 contains "shows the confirmation heading" "支払い確認画面" "$pay"
 contains "shows the M size row" "Mサイズ" "$pay"
-code=$(printf '%s' "$pay" | grep -oE 'tracking-\[0.2em\][^>]*>[0-9]{4}<' | grep -oE '[0-9]{4}')
+code=$(printf '%s' "$pay" | grep -oE 'class="confirm[^"]*">[0-9]{4}<' | grep -oE '[0-9]{4}')
 if [[ "$code" =~ ^[0-9]{4}$ ]]; then echo "  PASS  4-digit confirm code rendered ($code)"; else echo "  FAIL  no confirm code"; fail=1; fi
 
 echo "== POST / (invalid: zero shirts) =="

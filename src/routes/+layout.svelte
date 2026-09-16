@@ -1,18 +1,48 @@
 <script lang="ts">
-	import '../app.css';
+	import '../app.scss';
 
 	let { children } = $props();
 </script>
 
-<div class="flex min-h-screen flex-col bg-base-200">
-	<main class="mx-auto w-full max-w-2xl flex-1 space-y-4 p-4">
+<div class="shell">
+	<main class="page stack">
 		{@render children()}
 	</main>
 
-	<footer class="footer footer-center gap-2 bg-base-300 p-6 text-base-content">
-		<nav class="grid grid-flow-col gap-4">
-			<a class="link link-hover" href="https://github.com/5ym/easy-order">source</a>
-			<a class="link link-hover" href="https://twitter.com/5yuim">author</a>
+	<footer>
+		<nav>
+			<a href="https://github.com/5ym/easy-order">source</a>
+			<a href="https://twitter.com/5yuim">author</a>
 		</nav>
 	</footer>
 </div>
+
+<style>
+	/* 中身が短いページでも footer を下端に置く */
+	.shell {
+		display: flex;
+		flex-direction: column;
+		min-height: 100svh;
+	}
+	main {
+		flex: 1 1 auto;
+		padding-block: 1rem;
+	}
+	footer {
+		background: var(--ui-base-300);
+		padding: 1.5rem 1rem;
+	}
+	footer nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+	}
+	footer a {
+		color: inherit;
+		text-decoration: none;
+	}
+	footer a:hover {
+		text-decoration: underline;
+	}
+</style>
